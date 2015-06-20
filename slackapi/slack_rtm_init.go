@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"errors"
 	"golang.org/x/net/websocket"
-	"ioutil"
+	"io/ioutil"
 	"net/http"
 )
 
