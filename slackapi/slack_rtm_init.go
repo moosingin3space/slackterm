@@ -34,5 +34,13 @@ func DialSlack(token string) (*SlackRTM, error) {
 	if err != nil {
 		return nil, err
 	}
-	return &SlackRTM{ws: ws}, nil
+
+	return &SlackRTM{
+		ws:       ws,
+		TeamName: rtmResponse.Team.Name,
+		Roster:   rtmResponse.Users,
+		Channels: rtmResponse.Channels,
+		Groups:   rtmResponse.Groups,
+		DMs:      rtmResponse.IMs,
+	}, nil
 }
